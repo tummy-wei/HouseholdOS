@@ -28,7 +28,7 @@ class CapstoneWorkflowTests(unittest.TestCase):
     def test_golden_workflow_persists_complete_brief_and_visible_route(self) -> None:
         activity = RecurringActivity(
             activity_id="soccer",
-            person="Jeremy",
+            person="Student A",
             title="Soccer training",
             weekday=0,
             start_time=time(17),

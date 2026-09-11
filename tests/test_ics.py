@@ -23,7 +23,7 @@ END:VCALENDAR
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "calendar.ics"
             path.write_text(content, encoding="utf-8")
-            source = ICSCalendarSource(path, "soccer", "Jeremy", EventCategory.SOCCER)
+            source = ICSCalendarSource(path, "soccer", "Student A", EventCategory.SOCCER)
 
             event = source.events_between(date(2026, 9, 8), date(2026, 9, 8))[0]
 
@@ -49,7 +49,7 @@ END:VCALENDAR
             path = Path(directory) / "calendar.ics"
             path.write_text(content, encoding="utf-8")
             source = ICSCalendarSource(
-                path, "soccer", "Jeremy", EventCategory.SOCCER
+                path, "soccer", "Student A", EventCategory.SOCCER
             )
 
             events = source.events_between(date(2026, 9, 7), date(2026, 9, 13))

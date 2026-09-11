@@ -35,7 +35,7 @@ class FiveDomainPersistenceTests(unittest.TestCase):
                 category="Dairy",
                 quantity="2 gallons",
                 needed_for="School lunches",
-                assigned_to="Jessie",
+                assigned_to="Parent B",
             )
         )
         items = self.repository.list_grocery_items(date(2026, 9, 7), False)
@@ -63,7 +63,7 @@ class FiveDomainPersistenceTests(unittest.TestCase):
             NewHouseholdTask(
                 title="Replace furnace filter",
                 scope=TaskScope.MAINTENANCE,
-                owner="Kang",
+                owner="Parent A",
                 due_date=date(2026, 9, 12),
                 priority=TaskPriority.HIGH,
             )

@@ -94,7 +94,7 @@ class WeeklyPlanningWorkflowTests(unittest.TestCase):
             exception = ScheduleException(
                 activity_id="piano",
                 event_date=date(2026, 7, 20),
-                driver="Jessie",
+                driver="Parent B",
             )
             repository.save_schedule_exception(exception)
 
@@ -104,7 +104,7 @@ class WeeklyPlanningWorkflowTests(unittest.TestCase):
             self.assertEqual(loaded, [exception])
 
             approval_id = repository.propose_external_action(
-                "calendar.update", "Update event", "Piano", {"driver": "Jessie"}
+                "calendar.update", "Update event", "Piano", {"driver": "Parent B"}
             )
             repository.decide_external_action(approval_id, approved=True)
             approvals = repository.list_approval_requests()
@@ -118,7 +118,7 @@ class WeeklyPlanningWorkflowTests(unittest.TestCase):
                 NewHouseholdTask(
                     title="Prepare fellowship reminder",
                     scope=TaskScope.CHURCH,
-                    owner="Kang",
+                    owner="Parent A",
                     due_date=date(2026, 7, 22),
                     priority=TaskPriority.HIGH,
                 )
@@ -137,9 +137,9 @@ class WeeklyPlanningWorkflowTests(unittest.TestCase):
             self.assertEqual(repository.list_preferences(), [])
 
             repository.upsert_preference(
-                "dietary.elliott",
+                "dietary.student_b",
                 "Dairy-free",
-                "Elliott",
+                "Student B",
                 "Explicit test confirmation",
                 date(2026, 9, 7),
             )

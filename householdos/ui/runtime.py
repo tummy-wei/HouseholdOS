@@ -54,14 +54,14 @@ def load_activities() -> list[RecurringActivity]:
 def calendar_sources() -> list[ICSCalendarSource]:
     settings = Settings.from_env()
     def source(private_name: str, sample_name: str) -> Path:
-        private_path = ROOT / "docs" / private_name
-        return private_path if private_path.exists() and not settings.demo_mode else ROOT / "data" / "sample_calendars" / sample_name
+        private_path = Path(private_name).expanduser() if private_name else None
+        return private_path if private_path and private_path.is_file() and not settings.demo_mode else ROOT / "data" / "sample_calendars" / sample_name
 
     return [
-        ICSCalendarSource(source("TBCS-MS.ics", "student-a-school.ics"), "tbcs-ms", "Student A", EventCategory.SCHOOL),
-        ICSCalendarSource(source("TBCS-LS.ics", "student-b-school.ics"), "tbcs-ls", "Student B", EventCategory.SCHOOL),
-        ICSCalendarSource(source("Jeremy-LWFP.ics", "student-a-soccer.ics"), "lwfp-jeremy", "Student A", EventCategory.SOCCER),
-        ICSCalendarSource(source("Elliott-LWFP.ics", "student-b-soccer.ics"), "lwfp-elliott", "Student B", EventCategory.SOCCER),
+        ICSCalendarSource(source(settings.student_a_school_calendar_file, "student-a-school.ics"), "school-a", "Student A", EventCategory.SCHOOL),
+        ICSCalendarSource(source(settings.student_b_school_calendar_file, "student-b-school.ics"), "school-b", "Student B", EventCategory.SCHOOL),
+        ICSCalendarSource(source(settings.student_a_sports_calendar_file, "student-a-soccer.ics"), "sports-a", "Student A", EventCategory.SOCCER),
+        ICSCalendarSource(source(settings.student_b_sports_calendar_file, "student-b-soccer.ics"), "sports-b", "Student B", EventCategory.SOCCER),
     ]
 
 

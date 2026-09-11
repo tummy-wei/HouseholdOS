@@ -21,7 +21,7 @@ class OperationsWorkflowTests(unittest.TestCase):
         self.event = CalendarEvent(
             id="event-1",
             source_id="test",
-            person="Jeremy",
+            person="Student A",
             title="Soccer training",
             start_at=datetime(2026, 9, 11, 17, 0, tzinfo=timezone),
             end_at=datetime(2026, 9, 11, 19, 0, tzinfo=timezone),

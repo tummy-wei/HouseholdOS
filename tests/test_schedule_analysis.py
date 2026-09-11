@@ -32,8 +32,8 @@ def activity(
 class ScheduleAnalysisWorkflowTests(unittest.TestCase):
     def test_detects_same_person_overlap_and_open_driver(self) -> None:
         activities = [
-            activity("one", "Jeremy", "Piano", 0, time(18), time(19)),
-            activity("two", "Jeremy", "Math", 0, time(18, 30), time(20)),
+            activity("one", "Student A", "Piano", 0, time(18), time(19)),
+            activity("two", "Student A", "Math", 0, time(18, 30), time(20)),
         ]
 
         result = ScheduleAnalysisWorkflow().run(
@@ -49,14 +49,14 @@ class ScheduleAnalysisWorkflowTests(unittest.TestCase):
 
     def test_date_exception_changes_driver_and_time(self) -> None:
         activities = [
-            activity("piano", "Jeremy", "Piano", 0, time(18), time(19))
+            activity("piano", "Student A", "Piano", 0, time(18), time(19))
         ]
         exception = ScheduleException(
             activity_id="piano",
             event_date=date(2026, 9, 7),
             new_start_time=time(19),
             new_end_time=time(20),
-            driver="Jessie",
+            driver="Parent B",
         )
 
         result = ScheduleAnalysisWorkflow().run(
@@ -65,12 +65,12 @@ class ScheduleAnalysisWorkflowTests(unittest.TestCase):
 
         event = result.days[0].events[0]
         self.assertEqual(event.start_at.hour, 19)
-        self.assertEqual(result.transportation[0].driver, "Jessie")
+        self.assertEqual(result.transportation[0].driver, "Parent B")
         self.assertTrue(result.transportation[0].resolved)
 
     def test_cancelled_exception_removes_occurrence(self) -> None:
         activities = [
-            activity("piano", "Jeremy", "Piano", 0, time(18), time(19))
+            activity("piano", "Student A", "Piano", 0, time(18), time(19))
         ]
         exception = ScheduleException(
             activity_id="piano",
@@ -87,4 +87,3 @@ class ScheduleAnalysisWorkflowTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -52,7 +52,7 @@ def _activity(
 ) -> RecurringActivity:
     return RecurringActivity(
         activity_id=activity_id,
-        person="Jeremy",
+        person="Student A",
         title=title,
         weekday=0,
         start_time=start,
@@ -110,7 +110,7 @@ def run_capstone_benchmark(knowledge_path: str) -> BenchmarkSummary:
         date(2026, 9, 7),
         [],
         [_activity("piano", "Piano", time(17), time(18))],
-        [ScheduleException(activity_id="piano", event_date=date(2026, 9, 7), driver="Jessie")],
+        [ScheduleException(activity_id="piano", event_date=date(2026, 9, 7), driver="Parent B")],
     )
     check("Honor weekly driver override", "transportation", assigned.transportation[0].resolved, "Explicit driver resolves transport")
 

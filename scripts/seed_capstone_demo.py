@@ -33,12 +33,12 @@ def seed(repository: SQLitePlanRepository, today: date = date.today()) -> dict[s
         item.name for item in repository.list_grocery_items(week_start)
     }
     groceries = [
-        NewGroceryItem(week_start=week_start, name="Bananas", category="Produce", quantity="8", needed_for="School lunches", assigned_to="Jessie"),
-        NewGroceryItem(week_start=week_start, name="Baby spinach", category="Produce", quantity="1 large box", needed_for="Weeknight dinners", assigned_to="Kang"),
-        NewGroceryItem(week_start=week_start, name="Chicken thighs", category="Protein", quantity="3 lb", needed_for="Tuesday and Thursday dinners", assigned_to="Kang"),
-        NewGroceryItem(week_start=week_start, name="Greek yogurt", category="Dairy", quantity="2 tubs", needed_for="Breakfasts", assigned_to="Jessie"),
-        NewGroceryItem(week_start=week_start, name="Whole wheat bread", category="Bakery", quantity="2 loaves", needed_for="School lunches", assigned_to="Jessie"),
-        NewGroceryItem(week_start=week_start, name="Rice", category="Pantry", quantity="10 lb bag", needed_for="Household staple", assigned_to="Kang"),
+        NewGroceryItem(week_start=week_start, name="Bananas", category="Produce", quantity="8", needed_for="School lunches", assigned_to="Parent B"),
+        NewGroceryItem(week_start=week_start, name="Baby spinach", category="Produce", quantity="1 large box", needed_for="Weeknight dinners", assigned_to="Parent A"),
+        NewGroceryItem(week_start=week_start, name="Chicken thighs", category="Protein", quantity="3 lb", needed_for="Tuesday and Thursday dinners", assigned_to="Parent A"),
+        NewGroceryItem(week_start=week_start, name="Greek yogurt", category="Dairy", quantity="2 tubs", needed_for="Breakfasts", assigned_to="Parent B"),
+        NewGroceryItem(week_start=week_start, name="Whole wheat bread", category="Bakery", quantity="2 loaves", needed_for="School lunches", assigned_to="Parent B"),
+        NewGroceryItem(week_start=week_start, name="Rice", category="Pantry", quantity="10 lb bag", needed_for="Household staple", assigned_to="Parent A"),
     ]
     for item in groceries:
         if item.name not in existing_groceries:
@@ -53,7 +53,7 @@ def seed(repository: SQLitePlanRepository, today: date = date.today()) -> dict[s
             return_date=week_start + timedelta(days=41),
             origin="Bellevue, WA",
             destination="Portland, OR",
-            travelers="Kang, Jessie, Jeremy, Elliott",
+            travelers="Parent A, Parent B, Student A, Student B",
             transport_mode="Car",
             lodging="Downtown Portland hotel - demo hold",
             confirmation_refs="Hotel DEMO-PDX-4821",
@@ -64,8 +64,8 @@ def seed(repository: SQLitePlanRepository, today: date = date.today()) -> dict[s
 
     existing_tasks = {task.title for task in repository.list_tasks(True)}
     maintenance = [
-        NewHouseholdTask(title="[DEMO] Replace HVAC filter", scope=TaskScope.MAINTENANCE, owner="Kang", due_date=week_start + timedelta(days=5), priority=TaskPriority.HIGH, source=DEMO_SOURCE, notes="Use 20 x 25 x 1 MERV 11 filter. Record completion for the 90-day cycle."),
-        NewHouseholdTask(title="[DEMO] Test smoke and CO alarms", scope=TaskScope.MAINTENANCE, owner="Jessie", due_date=week_start + timedelta(days=12), priority=TaskPriority.MEDIUM, source=DEMO_SOURCE, notes="Test each floor and replace batteries that fail."),
+        NewHouseholdTask(title="[DEMO] Replace HVAC filter", scope=TaskScope.MAINTENANCE, owner="Parent A", due_date=week_start + timedelta(days=5), priority=TaskPriority.HIGH, source=DEMO_SOURCE, notes="Use 20 x 25 x 1 MERV 11 filter. Record completion for the 90-day cycle."),
+        NewHouseholdTask(title="[DEMO] Test smoke and CO alarms", scope=TaskScope.MAINTENANCE, owner="Parent B", due_date=week_start + timedelta(days=12), priority=TaskPriority.MEDIUM, source=DEMO_SOURCE, notes="Test each floor and replace batteries that fail."),
         NewHouseholdTask(title="[DEMO] Schedule fall gutter cleaning", scope=TaskScope.MAINTENANCE, owner="Unassigned", due_date=week_start + timedelta(days=26), priority=TaskPriority.MEDIUM, source=DEMO_SOURCE, notes="Collect two quotes. HouseholdOS must not contact or book a contractor without approval."),
     ]
     for task in maintenance:

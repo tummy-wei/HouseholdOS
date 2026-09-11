@@ -8,7 +8,7 @@ Open **Command center**. Explain that household and ministry commitments are fra
 across school calendars, soccer feeds, recurring activities, documents, email, and group
 communications. HouseholdOS turns them into one human-supervised operating plan.
 
-Point out the live week metrics, the planted Jeremy overlap, and unresolved driver
+Point out the live week metrics, the planted Student A overlap, and unresolved driver
 assignments. Emphasize that the system shows missing information instead of guessing.
 
 ## 2. Run the golden workflow (2 minutes)

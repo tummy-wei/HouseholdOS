@@ -16,11 +16,11 @@ st.caption("Inspect source authority, recurring data, and one-week calendar over
 source_cols = st.columns(3)
 with source_cols[0].container(border=True, height="stretch"):
     st.markdown("#### :material/school: School calendars")
-    st.write("TBCS Middle School and Lower School ICS snapshots")
+    st.write("Student A and Student B school calendar snapshots")
     st.badge("Read only", color="green")
 with source_cols[1].container(border=True, height="stretch"):
     st.markdown("#### :material/sports_soccer: Soccer calendars")
-    st.write("Jeremy and Elliott LWFP ICS snapshots")
+    st.write("Student A and Student B sports calendar snapshots")
     st.badge("Read only", color="green")
 with source_cols[2].container(border=True, height="stretch"):
     st.markdown("#### :material/church: Church calendars")
@@ -92,7 +92,7 @@ with st.form("schedule-exception"):
         "New location", value=activity.location, disabled=not change_location
     )
     driver = st.selectbox(
-        "Driver", ["Assign weekly", "Kang", "Jessie", "Carpool"], accept_new_options=True
+        "Driver", ["Assign weekly", "Parent A", "Parent B", "Carpool"], accept_new_options=True
     )
     note = st.text_input("Reason or note")
     queue_external = st.checkbox("Queue a matching calendar update for approval")
@@ -155,11 +155,11 @@ with st.container(border=True):
 st.subheader("Confirmed household memory")
 st.caption("Only preferences explicitly saved here become durable planning memory.")
 with st.form("confirmed-preference"):
-    pref_key = st.text_input("Preference key", placeholder="dietary.elliott")
+    pref_key = st.text_input("Preference key", placeholder="dietary.student_b")
     pref_value = st.text_input("Confirmed value", placeholder="No confirmed restriction")
     pref_cols = st.columns(3)
     pref_owner = pref_cols[0].selectbox(
-        "Owner", ["Household", "Kang", "Jessie", "Jeremy", "Elliott"]
+        "Owner", ["Household", "Parent A", "Parent B", "Student A", "Student B"]
     )
     pref_effective = pref_cols[1].date_input("Effective date", value=runtime.week_start)
     pref_sensitivity = pref_cols[2].selectbox(

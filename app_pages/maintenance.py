@@ -28,7 +28,7 @@ with st.expander("Add maintenance task", icon=":material/home_repair_service:"):
     with st.form("add-maintenance"):
         title = st.text_input("Task", placeholder="Replace furnace filter")
         cols = st.columns(3)
-        owner = cols[0].selectbox("Owner", ["Unassigned", "Kang", "Jessie"], accept_new_options=True)
+        owner = cols[0].selectbox("Owner", ["Unassigned", "Parent A", "Parent B"], accept_new_options=True)
         priority = cols[1].selectbox("Priority", [item.value for item in TaskPriority])
         due = cols[2].date_input("Due", value=runtime.week_start + timedelta(days=6))
         notes = st.text_area("Service details or recurrence", height=90)

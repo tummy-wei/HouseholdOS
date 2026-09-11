@@ -31,7 +31,7 @@ with st.expander("Add grocery item", icon=":material/add_shopping_cart:"):
         )
         quantity = cols[1].text_input("Quantity", value="1")
         assigned_to = cols[2].selectbox(
-            "Shopper", ["Unassigned", "Kang", "Jessie"], accept_new_options=True
+            "Shopper", ["Unassigned", "Parent A", "Parent B"], accept_new_options=True
         )
         needed_for = st.text_input("Needed for", value="Weekly household")
         add = st.form_submit_button("Add to list", icon=":material/add:", type="primary")

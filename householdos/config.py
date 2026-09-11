@@ -26,6 +26,10 @@ class Settings:
     gmail_church_account: str = "church-account@example.com"
     gmail_personal_account: str = "personal-account@example.com"
     pastor_sender_email: str = "pastor@example.org"
+    student_a_school_calendar_file: str = ""
+    student_b_school_calendar_file: str = ""
+    student_a_sports_calendar_file: str = ""
+    student_b_sports_calendar_file: str = ""
     demo_mode: bool = False
 
     @property
@@ -60,5 +64,9 @@ class Settings:
             gmail_church_account=os.getenv("GMAIL_CHURCH_ACCOUNT", "church-account@example.com"),
             gmail_personal_account=os.getenv("GMAIL_PERSONAL_ACCOUNT", "personal-account@example.com"),
             pastor_sender_email=os.getenv("PASTOR_SENDER_EMAIL", "pastor@example.org"),
+            student_a_school_calendar_file=os.getenv("STUDENT_A_SCHOOL_CALENDAR_FILE", ""),
+            student_b_school_calendar_file=os.getenv("STUDENT_B_SCHOOL_CALENDAR_FILE", ""),
+            student_a_sports_calendar_file=os.getenv("STUDENT_A_SPORTS_CALENDAR_FILE", ""),
+            student_b_sports_calendar_file=os.getenv("STUDENT_B_SPORTS_CALENDAR_FILE", ""),
             demo_mode=os.getenv("HOUSEHOLDOS_DEMO_MODE", "").lower() in {"1", "true", "yes", "on"},
         )

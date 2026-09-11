@@ -8,7 +8,7 @@ SDK while deterministic workflows remain available without an API key.
 
 ## What is included
 
-- Read-only ICS ingestion for the two TBCS and two LWFP calendars in `docs/`
+- Read-only ICS ingestion for four configurable school and sports calendars
 - Unified monthly calendar view across school, soccer, recurring activities, and church events
 - An editable JSON registry of fourteen recurring activities
 - Deterministic timezone normalization, source-aware soccer deduplication, and
@@ -130,7 +130,7 @@ python -m householdos.evaluation.run
 
 ## Current data workflow
 
-- Replace the four files in `docs/` with refreshed ICS snapshots when needed.
+- Set the four `STUDENT_*_CALENDAR_FILE` environment variables to private ICS snapshots when needed.
 - Edit `data/recurring_activities.json` for durable recurring-schedule changes.
 - Use **Weekly changes** in the app for one-date cancellations, rescheduling,
   location changes, or driver assignments. These overrides are stored in SQLite.

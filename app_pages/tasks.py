@@ -27,7 +27,7 @@ with st.expander("Add a task", icon=":material/add_task:"):
         )
         col1, col2, col3 = st.columns(3)
         owner = col1.selectbox(
-            "Owner", ["Unassigned", "Kang", "Jessie"], accept_new_options=True
+            "Owner", ["Unassigned", "Parent A", "Parent B"], accept_new_options=True
         )
         priority = col2.selectbox("Priority", [item.value for item in TaskPriority])
         has_due_date = col3.checkbox("Set due date", value=True)
@@ -54,7 +54,7 @@ with st.container(horizontal=True, vertical_alignment="center"):
             NewHouseholdTask(
                 title="Review and send Friday fellowship reminder",
                 scope=TaskScope.CHURCH,
-                owner="Kang",
+                owner="Parent A",
                 due_date=runtime.week_start + timedelta(days=2),
                 priority=TaskPriority.HIGH,
                 source="Weekly ministry workflow",
@@ -62,7 +62,7 @@ with st.container(horizontal=True, vertical_alignment="center"):
             NewHouseholdTask(
                 title="Confirm Bible study leader, helpers, and materials",
                 scope=TaskScope.CHURCH,
-                owner="Kang",
+                owner="Parent A",
                 due_date=runtime.week_start + timedelta(days=2),
                 priority=TaskPriority.HIGH,
                 source="Weekly ministry workflow",
@@ -71,7 +71,7 @@ with st.container(horizontal=True, vertical_alignment="center"):
             NewHouseholdTask(
                 title="Extract and review Saturday online prayer announcement",
                 scope=TaskScope.CHURCH,
-                owner="Kang",
+                owner="Parent A",
                 due_date=runtime.week_start + timedelta(days=5),
                 priority=TaskPriority.HIGH,
                 source="Weekly ministry workflow",
@@ -80,7 +80,7 @@ with st.container(horizontal=True, vertical_alignment="center"):
             NewHouseholdTask(
                 title="Extract and review Sunday message forecast",
                 scope=TaskScope.CHURCH,
-                owner="Kang",
+                owner="Parent A",
                 due_date=runtime.week_start + timedelta(days=5),
                 priority=TaskPriority.HIGH,
                 source="Weekly ministry workflow",
@@ -89,7 +89,7 @@ with st.container(horizontal=True, vertical_alignment="center"):
             NewHouseholdTask(
                 title="Index this week's Bible study materials",
                 scope=TaskScope.CHURCH,
-                owner="Kang",
+                owner="Parent A",
                 due_date=runtime.week_start + timedelta(days=2),
                 priority=TaskPriority.MEDIUM,
                 source="Weekly ministry workflow",

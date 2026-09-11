@@ -75,7 +75,7 @@ with st.form("kids-weekly-override"):
     )
     cancelled = st.checkbox("Cancel this occurrence")
     driver = st.selectbox(
-        "Driver", ["Assign weekly", "Kang", "Jessie", "Carpool"], accept_new_options=True
+        "Driver", ["Assign weekly", "Parent A", "Parent B", "Carpool"], accept_new_options=True
     )
     change_time = st.checkbox("Change time")
     time_cols = st.columns(2)
