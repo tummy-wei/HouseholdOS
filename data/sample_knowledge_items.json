@@ -1,0 +1,20 @@
+[
+  {
+    "source_id": "DEMO-RULE-ARRIVAL",
+    "title": "Synthetic arrival-buffer policy",
+    "timestamp": "2026-09-07T00:00:00-07:00",
+    "owner": "Demo household",
+    "sensitivity": "Household",
+    "domain": "household",
+    "excerpt": "Plan to arrive 15 minutes before activities. Drivers remain unassigned until a parent confirms availability."
+  },
+  {
+    "source_id": "DEMO-CHURCH-REMINDER",
+    "title": "Synthetic fellowship reminder policy",
+    "timestamp": "2026-09-07T00:00:00-07:00",
+    "owner": "Demo ministry team",
+    "sensitivity": "Church admin",
+    "domain": "church",
+    "excerpt": "Prepare the Friday reminder on Wednesday. A human must approve any LINE delivery."
+  }
+]

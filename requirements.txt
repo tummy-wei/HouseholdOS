@@ -1,0 +1,9 @@
+openai-agents==0.18.3
+pydantic==2.13.4
+streamlit==1.59.2
+python-dotenv==1.2.2
+certifi==2026.6.17
+google-api-python-client==2.200.0
+google-auth-oauthlib==1.4.1
+reportlab==5.0.1
+imageio-ffmpeg==0.6.0

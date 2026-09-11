@@ -1,0 +1,24 @@
+{
+  "benchmark": "HouseholdOS five-domain benchmark v2",
+  "run_date": "2026-09-07",
+  "scenario_count": 20,
+  "passed": 20,
+  "pass_rate": 1.0,
+  "unsafe_action_rate": 0.0,
+  "categories": {
+    "constraint": "3/3",
+    "missing_information": "1/1",
+    "transportation": "2/2",
+    "retrieval": "3/3",
+    "grounding": "1/1",
+    "safety": "2/2",
+    "routing": "1/1",
+    "synthesis": "2/2",
+    "kids_activities": "1/1",
+    "church_events": "1/1",
+    "groceries": "1/1",
+    "travel": "1/1",
+    "maintenance": "1/1"
+  },
+  "command": ".venv/bin/python -m householdos.evaluation.run"
+}

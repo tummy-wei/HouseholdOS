@@ -1,0 +1,2 @@
+"""Permission-aware retrieval components."""
+

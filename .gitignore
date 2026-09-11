@@ -1,0 +1,44 @@
+.venv/
+.env
+.env.local
+secrets/
+__pycache__/
+*.pyc
+*.db
+*.db-shm
+*.db-wal
+.DS_Store
+.streamlit/secrets.toml
+
+# Private runtime state and mailbox authorization
+secrets/**
+data/*.db*
+data/householdos.db*
+*.token.json
+token*.json
+credentials*.json
+
+# Real household calendars and activity/location data
+docs/*.ics
+docs/*.pdf
+docs/ADMIN_SOP_CALENDAR_SYNC.md
+docs/GMAIL_INTAKE_SETUP.md
+docs/MINISTRY_OPERATIONS_SOP.md
+data/recurring_activities.json
+data/knowledge_items.json
+
+# Local/generated build material
+tmp/
+.chart-data-*/
+scripts/node_modules
+.codex-finalizer/
+.agents/
+.claude/
+
+# Keep only final sanitized capstone artifacts if output is committed
+output/pdf/*.pdf
+!output/pdf/HouseholdOS_Final_Capstone_Report.pdf
+output/pptx/*.pptx
+!output/pptx/HouseholdOS_Final_Capstone_Presentation_2026_GitHub.pptx
+!output/pptx/HouseholdOS_Final_Capstone_Presentation_With_Live_Demo.pptx
+output/video/
